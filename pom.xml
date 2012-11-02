@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <vandy.release.url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/Vanderbilt/</vandy.release.url>
+    <vandy.snapshot.url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/vanderbilt-snapshot/</vandy.snapshot.url>
+
+  </properties>
+
+  <groupId>edu.vu.isis</groupId>
+  <artifactId>ammo-common-parent</artifactId>
+  <version>1.7.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>ammo common parent project</name>
+
+  <scm>
+     <connection>scm:git:ammo.isis.vanderbilt.edu:isis/git_repos/ammo-common.git</connection>
+     <developerConnection>scm:git:ammo.isis.vanderbilt.edu:isis/git_repos/ammo-common.git</developerConnection>
+     <url>scm:git:ammo.isis.vanderbilt.edu:isis/git_repos/ammo-common.git</url>
+  </scm>
+
+  <modules>
+    <module>ammo-message</module>
+  </modules>
+
+  <distributionManagement>
+    <repository>
+      <id>vanderbilt-release-repository</id>
+      <url>${vandy.release.url}</url>
+    </repository>
+    <snapshotRepository>
+      <id>vanderbilt-snapshot-repository</id>
+      <url>${vandy.snapshot.url}</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>
