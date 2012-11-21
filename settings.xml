@@ -133,6 +133,37 @@
         </repository>
 
       </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>vanderbilt.release.repository</id>
+          <name>Repository for release builds</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/Vanderbilt/</url>
+          <layout>default</layout>
+        </pluginRepository>
+
+        <pluginRepository>
+          <id>vanderbilt.snapshot.repository</id>
+          <name>Repository for snapshot builds</name>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/vanderbilt-snapshot/</url>
+          <layout>default</layout>
+        </pluginRepository>
+      </pluginRepositories>
     </profile>
   </profiles>
 
