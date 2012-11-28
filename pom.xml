@@ -16,7 +16,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 
   <groupId>edu.vu.isis</groupId>
   <artifactId>ammo-common-parent</artifactId>
-  <version>1.7.0-RC2</version>
+  <version>1.7.0-RC3</version>
   <packaging>pom</packaging>
   <name>ammo common parent project</name>
 
@@ -72,13 +72,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       <dependency>
         <groupId>com.github.tony19</groupId>
         <artifactId>logback-android-core</artifactId>
-        <version>1.0.7-2-SNAPSHOT</version>
+     <!--   <version>1.0.7-2-SNAPSHOT</version> -->
+        <version>1.0.7-1</version>
       </dependency>
 
       <dependency>
         <groupId>com.github.tony19</groupId>
         <artifactId>logback-android-classic</artifactId>
-        <version>1.0.7-2-SNAPSHOT</version>
+     <!--   <version>1.0.7-2-SNAPSHOT</version> -->
+        <version>1.0.7-1</version>
       </dependency>
 
       <dependency>
