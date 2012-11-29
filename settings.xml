@@ -59,7 +59,7 @@
       <id>develop-ammo</id>
 
       <activation>
-          <activeByDefault>true</activeByDefault>
+         <activeByDefault>true</activeByDefault>
       </activation>
 
       <properties>

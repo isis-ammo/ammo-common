@@ -16,7 +16,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 
   <groupId>edu.vu.isis</groupId>
   <artifactId>ammo-common-parent</artifactId>
-  <version>1.7.0-RC3</version>
+  <version>1.7.0-RC4</version>
   <packaging>pom</packaging>
   <name>ammo common parent project</name>
 
@@ -140,17 +140,17 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
           <artifactId>maven-antrun-plugin</artifactId>
           <version>1.7</version>
             <dependencies>
-                  <dependency>
-                    <groupId>ant-contrib</groupId>
-                    <artifactId>ant-contrib</artifactId>
-                    <version>1.0b3</version>
-                    <exclusions>
-                      <exclusion>
-                        <groupId>ant</groupId>
-                        <artifactId>ant</artifactId>
-                      </exclusion>
-                    </exclusions>
-                  </dependency>
+              <dependency>
+                <groupId>ant-contrib</groupId>
+                <artifactId>ant-contrib</artifactId>
+                <version>1.0b3</version>
+                <exclusions>
+                  <exclusion>
+                    <groupId>ant</groupId>
+                    <artifactId>ant</artifactId>
+                  </exclusion>
+                </exclusions>
+              </dependency>
             </dependencies>
         </plugin>
 
