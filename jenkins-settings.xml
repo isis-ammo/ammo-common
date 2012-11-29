@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <pluginGroups>
+     <pluginGroup>com.jayway.maven.plugins.android.generation2</pluginGroup>
+  </pluginGroups>
+
+  <proxies>
+    <proxy>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>10.0.0.1</host>
+      <port>3128</port>
+    </proxy>
+  </proxies>
+
+  <servers>
+    <server>
+      <id>vanderbilt.release.repository</id>
+      <username>jenkins</username>
+      <password>sniknej</password>
+    </server>
+
+    <server>
+      <id>android.repository</id>
+      <username>jenkins</username>
+      <password>sniknej</password>
+    </server>
+
+    <server>
+      <id>vanderbilt.snapshot.repository</id>
+      <username>jenkins</username>
+      <password>sniknej</password>
+    </server>
+
+    <server>
+      <id>transapps.release.repository</id>
+      <username>transapps</username>
+      <password>tapanthrnexus</password>
+    </server>
+
+  </servers>
+
+  <mirrors>
+    <mirror>
+      <id>centralMirror</id>
+      <mirrorOf>central</mirrorOf>
+      <name>Central Repository Mirror.</name>
+      <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/central</url>
+    </mirror>
+
+    <mirror>
+      <id>transappsMirror</id>
+      <mirrorOf>transapps</mirrorOf>
+      <name>Transapps Repository Mirror.</name>
+      <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/transapps</url>
+    </mirror>
+  </mirrors>
+
+  <profiles>
+    <profile>
+      <id>develop-ammo</id>
+
+      <activation>
+          <activeByDefault>true</activeByDefault>
+      </activation>
+
+      <properties>
+        <vanderbilt.release.url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/Vanderbilt/</vanderbilt.release.url>
+        <vanderbilt.snapshot.url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/vanderbilt-snapshot/</vanderbilt.snapshot.url>
+        <transapps.public.url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/transapps/</transapps.public.url>
+
+        <repo.id>android.repository</repo.id>
+        <repo.url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/Vanderbilt/</repo.url>
+      </properties>
+
+      <repositories>
+        <repository>
+          <id>eucleo-release-repository</id>
+          <name>Repository for release builds</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/transapps/</url>
+          <layout>default</layout>
+        </repository>
+
+        <repository>
+          <id>vanderbilt.release.repository</id>
+          <name>Repository for release builds</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/Vanderbilt/</url>
+          <layout>default</layout>
+        </repository>
+
+        <repository>
+          <id>vanderbilt.snapshot.repository</id>
+          <name>Repository for snapshot builds</name>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/vanderbilt-snapshot/</url>
+          <layout>default</layout>
+        </repository>
+
+        <repository>
+          <id>sonatype.snapshot.repository</id>
+          <name>Sonatype snapshot repository</name>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </snapshots>
+          <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+          <layout>default</layout>
+        </repository>
+
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>vanderbilt.release.repository</id>
+          <name>Repository for release builds</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/Vanderbilt/</url>
+          <layout>default</layout>
+        </pluginRepository>
+
+        <pluginRepository>
+          <id>vanderbilt.snapshot.repository</id>
+          <name>Repository for snapshot builds</name>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/vanderbilt-snapshot/</url>
+          <layout>default</layout>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <activeProfile>develop-ammo</activeProfile>
+  </activeProfiles>
+
+</settings>
