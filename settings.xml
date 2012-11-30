@@ -59,7 +59,7 @@
       <id>develop-ammo</id>
 
       <activation>
-         <activeByDefault>true</activeByDefault>
+          <activeByDefault>true</activeByDefault>
       </activation>
 
       <properties>
@@ -72,21 +72,6 @@
       </properties>
 
       <repositories>
-        <repository>
-          <id>eucleo-release-repository</id>
-          <name>Repository for release builds</name>
-          <releases>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-            <checksumPolicy>fail</checksumPolicy>
-          </releases>
-          <snapshots>
-            <enabled>false</enabled>
-          </snapshots>
-          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/transapps/</url>
-          <layout>default</layout>
-        </repository>
-
         <repository>
           <id>vanderbilt.release.repository</id>
           <name>Repository for release builds</name>
@@ -129,6 +114,21 @@
             <checksumPolicy>fail</checksumPolicy>
           </snapshots>
           <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+          <layout>default</layout>
+        </repository>
+
+        <repository>
+          <id>eucleo-release-repository</id>
+          <name>Repository for release builds</name>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <url>http://ammo.isis.vanderbilt.edu:8081/nexus/content/repositories/transapps/</url>
           <layout>default</layout>
         </repository>
 

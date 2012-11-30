@@ -20,10 +20,6 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
   <packaging>pom</packaging>
   <name>ammo common parent project</name>
 
-  <modules>
-<!-- <module>ammo-message</module> -->
-  </modules>
-
   <scm>
      <connection>scm:git:ammo.isis.vanderbilt.edu:isis/git_repos/ammo-common.git</connection>
      <developerConnection>scm:git:ammo.isis.vanderbilt.edu:isis/git_repos/ammo-common.git</developerConnection>
