@@ -47,6 +47,7 @@ message AcknowledgementThresholds {
 message DataMessage {
   required string uri = 1;
   optional string mime_type = 3;
+  repeated string subtopics = 9;
   optional string encoding = 5 [default = "json"];
   optional bytes data = 2;
   optional MessageScope scope = 4 [default = GLOBAL];
@@ -107,6 +108,7 @@ message AuthenticationMessage {
 */
 message SubscribeMessage {
   required string mime_type = 1;
+  repeated string subtopics = 6;
   optional string query = 2;
   optional MessageScope scope = 3 [default = GLOBAL];
   optional string origin_device = 4 [default = ""];
@@ -119,7 +121,26 @@ message SubscribeMessage {
 */
 message UnsubscribeMessage {
   required string mime_type = 1;
+  repeated string subtopics = 4;
   optional MessageScope scope = 3 [default = GLOBAL];
+}
+
+message SubtopicInvitation {
+  required string mime_type = 1;
+  repeated string subtopics = 2;
+  
+  message Invitee {
+    enum InviteeType {
+      USER = 1;
+    }
+    required InviteeType type = 1;
+    required string name = 2;
+  }
+  
+  optional bool openTopic = 3 [default = true];
+  repeated Invitee invitees = 4;
+  optional bool expires = 5 [default = false];
+  optional int64 expiration_time = 6;
 }
 
 /**
@@ -201,6 +222,7 @@ message MessageWrapper {
     HEARTBEAT = 8;
     UNSUBSCRIBE_MESSAGE = 9;
     TERSE_MESSAGE = 10;
+    SUBTOPIC_INVITATION = 11;
   }
 
   required MessageType type = 1;
@@ -218,4 +240,5 @@ message MessageWrapper {
   optional Heartbeat heartbeat = 10;
   optional UnsubscribeMessage unsubscribe_message = 11;
   optional TerseMessage terse_message = 13;
+  optional SubtopicInvitation subtopic_invitation = 14;
 }
