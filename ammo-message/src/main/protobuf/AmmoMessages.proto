@@ -180,6 +180,7 @@ message AuthenticationResult {
 message PullRequest {
   required string request_uid = 1;
   required string mime_type = 3;
+  repeated string subtopics = 10;
   required string query = 4;
   optional string projection = 5;
   optional uint32 max_results = 6 [default = 0]; //0 means infinite results--  send as many as possible
@@ -197,6 +198,7 @@ message PullResponse {
   required string request_uid = 1;
   required string plugin_id = 2;
   required string mime_type = 3;
+  repeated string subtopics = 7;
   required string uri = 4;
   optional string encoding = 6 [default = "json"];
   required bytes data = 5;
