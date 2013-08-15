@@ -90,9 +90,9 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       </dependency>
 
       <dependency>
-       <groupId>transapps</groupId>
-        <artifactId>tasettings-api</artifactId>
-        <version>1.0.25</version>
+	<groupId>android.support</groupId>
+	<artifactId>compatibility-v4</artifactId>
+	<version>11</version>
       </dependency>
 
       <dependency>
@@ -163,7 +163,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
         <plugin>
           <groupId>com.jayway.maven.plugins.android.generation2</groupId>
           <artifactId>android-maven-plugin</artifactId>
-          <version>3.5.1</version>
+          <version>3.6.0</version>
           <configuration>
            <dex>
               <jvmArguments>
@@ -202,6 +202,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
           <version>2.4</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>2.6</version>
         </plugin>
 
         <plugin>
